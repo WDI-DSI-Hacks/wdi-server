@@ -1,0 +1,75 @@
+
+#main{
+display: flex;
+flex-direction: column;
+background-size: cover;
+width: 320px;
+height: 568px;
+border: 1px solid black;
+}
+
+
+.titleheader{
+display: flex;
+width: 320px;
+height: 63px;
+/* border: 1px solid black; */
+background-color: #007dc6;
+}
+
+h3{
+display: flex;
+color: white;
+text-align: center;
+}
+
+
+/* #chartContainer{
+display: flex;
+width: 100px;
+height: 63px;
+border: 1px solid black;
+background-color: #007dc6;
+
+}
+ */
+
+
+
+input[type=date], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow:hidden;
+}
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow:hidden;
+}
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+#form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
