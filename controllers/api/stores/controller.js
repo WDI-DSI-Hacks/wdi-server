@@ -1,9 +1,11 @@
 const Stores = require('../../../models/stores');
+const moment = require('moment');
 const controller = {};
 
 controller.index = (req,res)=>{
+  const week = new Date()
   Stores
-    .findAll()
+    .findAll(moment().week())
     .then(data=>{
       const top = data[0];
       const low = data[1];
@@ -22,7 +24,7 @@ controller.index = (req,res)=>{
 
 controller.show = (req, res) =>{
   Stores
-    .find(store, department, year)
+    .dummy(store, department, year)
     .then(results=>{
       res.json(results);
     })

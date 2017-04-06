@@ -16,11 +16,12 @@ Stores.find = (store, department, year)=>{
 }
 
 Stores.findAll = (week)=>{
+  return db.task(t=>{
+    const q1 = t.manyOrNone('SELECT AVG(weekly_sales) AS profit, dept FROM profits WHERE EXTRACT(WEEK FROM week) = $1 GROUP BY dept ORDER BY AVG(weekly_sales) DESC LIMIT 5', [week])
+    const q2 = t.manyOrNone('SELECT AVG(weekly_sales) AS profit, dept FROM profits WHERE EXTRACT(WEEK FROM week) = $1 GROUP BY dept ORDER BY AVG(weekly_sales) LIMIT 5', [week])
+    return t.batch([q1, q2]);
+  })
 
-  const q1 = db.manyOrNone('SELECT AVG(weekly_sales) AS profit, dept FROM profits WHERE EXTRACT(WEEK FROM week) = $1 GROUP BY dept ORDER BY AVG(weekly_sales) DESC LIMIT 5', [week])
-  const q2 = db.manyOrNone('SELECT AVG(weekly_sales) AS profit, dept FROM profits WHERE EXTRACT(WEEK FROM week) = $1 GROUP BY dept ORDER BY AVG(weekly_sales) LIMIT 5', [week])
-
-  return t.batch([q1, q2]);
 }
 
 Stores.test = ()=>{
@@ -32,5 +33,11 @@ Stores.test = ()=>{
     }
   })
 }
+
+Stores.dummy = (store, department, year) =>{
+  return db.manyOrNone('SELECT EXTRACT(WEEK FROM week) AS week, weekly_sales AS profit FROM profits WHERE EXTRACT(YEAR FROM week) = $1 AND dept=$2 AND store=$3', [year, department, store])
+}
+
+
 
 module.exports = Stores;
