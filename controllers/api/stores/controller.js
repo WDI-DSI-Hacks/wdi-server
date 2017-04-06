@@ -24,7 +24,7 @@ controller.index = (req,res)=>{
 
 controller.show = (req, res) =>{
   Stores
-    .dummy(store, department, year)
+    .dummy(req.params.store, req.params.department, req.params.year)
     .then(results=>{
       res.json(results);
     })
