@@ -1,119 +1,56 @@
 
-	window.onload = function () {
-		var chart = new CanvasJS.Chart("chartContainer", {
+console.log('Main JS working');
+$(document).ready(function() {
+// $.ajax({
+//   url: 'localhost:3000/api/stores/findeeps',
+//   dataType: 'json',
+//   data: results;
+// })
+// .done(function() {
+//   console.log("success");
+// })
+// .fail(function() {
+//   console.log("error");
+// })
+// .always(function() {
+//   console.log("complete");
+// });
 
-			title:{
-				text:"Wal-Mart Finances"				
+const CHART = document.getElementById('linechart');
+console.log(CHART);
+let lineChart = new Chart(CHART, {
+  type: 'line',
+  data: {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+           {
 
-			},
-                        animationEnabled: true,
-			axisX:{
-				interval: 1,
-				gridThickness: 0,
-				labelFontSize: 10,
-				labelFontStyle: "normal",
-				labelFontWeight: "normal",
-				labelFontFamily: "Lucida Sans Unicode"
+            label: "My First dataset",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: [65, 59, 80, 81, 56, 55, 40],
 
-			},
-			axisY2:{
-				interlacedColor: "rgba(1,77,101,.2)",
-				gridColor: "rgba(1,77,101,.1)"
-
-			},
-
-			data: [
-			{     
-				type: "bar",
-                name: "companies",
-				axisYType: "secondary",
-				color: "#014D65",				
-				dataPoints: [
-				
-				{y: 5, label: "Sweden"  },
-				{y: 6, label: "Taiwan"  },
-				{y: 7, label: "Russia"  },
-				{y: 8, label: "Spain"  },
-				{y: 8, label: "Brazil"  },
-				{y: 8, label: "India"  },
-				{y: 9, label: "Italy"  },
-				{y: 9, label: "Australia"  },
-				{y: 12, label: "Canada"  },
-				{y: 13, label: "South Korea"  },
-				{y: 13, label: "Netherlands"  },
-				{y: 15, label: "Switzerland"  },
-				{y: 28, label: "Britain" },
-				{y: 32, label: "Germany"   },
-				{y: 32, label: "France"  },
-				{y: 68, label: "Japan"   },
-				{y: 73, label: "China"},
-				{y: 132, label: "US" }
-				]
-			}
-			
-			]
-		});
-
-chart.render();
-};
-
-console.log('Main JS is working')
-
-
-window.onload = function() {
-    var chart = new CanvasJS.Chart("chartContainer", {
-        zoomEnabled: true,
-        animationEnabled: true,
-        title: {
-            text: "Top vs Low Departments"
-
-
-        },
-        axisX: {
-            title: "Revenue (millions USD)",
-            valueFormatString: "#0.#",
-            maximum: 17,
-            minimum: -.1,
-            gridThickness: 1,
-            tickThickness: 1,
-            gridColor: "lightgrey",
-            tickColor: "lightgrey",
-            lineThickness: 0
-        },
-        axisY: {
-            title: "Departments(Profits)",
-            gridThickness: 1,
-            tickThickness: 1,
-            gridColor: "lightgrey",
-            tickColor: "lightgrey",
-            lineThickness: 0,
-            valueFormatString: "#,##0k,.",
-            maximum: 250000,
-            interval: 50000
-
-        },
-
-        data: [{
-            type: "bubble",
-            toolTipContent: "<span style='\"'color: {color};'\"'><strong>{label}</strong></span><br/> <strong>Revenue</strong> {x} Millions <br/> <strong>Profit</strong> {y} Millions <br/> <strong>Loss</strong> {z} Millions",
-            dataPoints: [
-                { x: 9.14, y: 228513, z: 309.34, label: "Store1" },
-                { x: 16.37, y: 85292, z: 141.92, label: "Store2" },
-                { x: 1.21, y: 22051, z: 120.99, label: "Store3" },
-                { x: 9.327, y: 66239, z: 1337, label: "Store4" },
-                { x: 9.09, y: 58345, z: 34.12, label: "Store5" },
-                { x: 8.45, y: 29817, z: 194.94, label: "Store6" },
-                { x: 7.68, y: 8615, z: 22.29, label: "Store7" },
-                { x: 2.97, y: 63974, z: 1224.61, label: "Store8" },
-                { x: 2.73, y: 25023, z: 40.41, label: "Store9" },
-                { x: 1.94, y: 26704, z: 113.42, label: "Store10" },
-
-
-
-            ]
-        }]
-    });
-
-    chart.render();
+            }
+         ]
 }
+})
+ });
+
+
+
 

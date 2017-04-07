@@ -4,12 +4,14 @@
 <head>
 
 
-  <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+  <!-- <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
    <link rel="stylesheet" href="../css/styles.css">
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/Chart.min.js"></script>
-    <!-- <script src="path/to/jquery.nice-select.js"></script> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -17,12 +19,16 @@
 </head>
 
 <body>
+
     <div id="main" class="maindiv">
         <div id="titletop" class="titleheader">
             <center>
-                <h3>Walmart Sales Forecast</h3></center>
-        </div>
-        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                <h3>Walmart Sales Forecast</h3></center></div>
+
+
+<div><canvas id="linechart" width="250" height="400"></canvas></div>
+
+
         <div class="styled-select blue semi-square">
             <div id="form">
                 <form action="/">
