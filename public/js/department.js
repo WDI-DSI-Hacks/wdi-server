@@ -64,7 +64,7 @@ $(()=>{
       .empty();
     const $canvas = $('<canvas>',{
       width: 400,
-      height: 300,
+      height: 285,
       id: 'graph'
     }).appendTo($graphContainer);
     data = data.sort((a,b)=>{

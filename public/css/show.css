@@ -33,6 +33,9 @@ a, #compare{
   cursor: pointer;
 }
 
+.inputs select{
+  margin-bottom: 10px
+}
 
 .inputs{
   display: -webkit-flex;
