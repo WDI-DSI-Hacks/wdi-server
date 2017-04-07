@@ -4,13 +4,12 @@ const requestify = require('requestify');
 
 const dsiURL = process.env.DSI_URL || 'http://localhost:4000/predict';
 
-//http://stackoverflow.com/questions/32126711/asynchronous-function-call-inside-for-loop
-Stores.find = (store, department, year)=>{
+
+Stores.find = (store, department)=>{
   return requestify.get(dsiURL,{
     params: {
       Store: store,
       Dept: department,
-      year: year
     }
   })
 }
