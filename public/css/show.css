@@ -1,0 +1,57 @@
+.store-container{
+  min-height: 100vh;
+  background-color: white;
+  margin: 0 auto;
+  max-width: 900px;
+  text-align: left;
+  padding: 10px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+body, html{
+  margin: 0 auto;
+  background-color: #78b9e7;
+  font-family: sans-serif;
+}
+
+header{
+  -ms-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+}
+
+a, #compare{
+  color: #007dc6;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.inputs select{
+  margin-bottom: 10px
+}
+
+.inputs{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+.store-container h1{
+  text-align: center;
+}
+
+.store-container a{
+  margin: 0;
+}
