@@ -11,4 +11,6 @@ CREATE TABLE profits(
 );
 
 COPY profits(store,dept,week,weekly_sales,is_holiday)
-FROM '/Users/Jackie/code/wdi/projects/hackathon/wdi-server/db/train.csv' DELIMITER ',' CSV HEADER;
+FROM '/Users/digitalmediaflow/wdi-server/db/train.csv' DELIMITER ',' CSV HEADER;
+
+
