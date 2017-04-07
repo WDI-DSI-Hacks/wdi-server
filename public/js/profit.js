@@ -83,7 +83,7 @@ $(()=>{
       .empty();
     const $canvas = $('<canvas>',{
       width: 400,
-      height: 300,
+      height: 290,
       id: 'graph'
     }).appendTo($graphContainer);
 
