@@ -7,17 +7,17 @@
   <link rel="stylesheet" href="/css/show.css">
   <script src="/js/jquery.js"></script>
   <script src="/js/Chart.min.js"></script>
-  <script src="/js/profit.js"></script>
+  <script src="/js/department.js"></script>
   <title>Sales</title>
 </head>
 <body>
   <div class="store-container">
     <header>
-      <h1>Walmart Weekly Sales at Store {{storeId}}</h1>
+      <h1>Walmart Sales This Week in All Stores</h1>
     </header>
-    <a href="/">Home</a> 
+    <a href="/">Home</a> > <a href="/stores/{{storeId}}">Store</a>
 
-    <div class="inputs" data-store-id={{storeId}}>
+    <div class="inputs" data-store-id={{storeId}} data-dept-id={{deptId}}>
 
     </div>
     <div class="graph">
