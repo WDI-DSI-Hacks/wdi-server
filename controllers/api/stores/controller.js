@@ -32,7 +32,6 @@ controller.show = (req, res) =>{
     .find(store, department)
     .then(results =>{
       const body = JSON.parse(results.getBody());
-      console.log(body);
 
       const data = body["Weekly_Sales"].map((sales, i)=>{
         return {
@@ -56,6 +55,23 @@ controller.show = (req, res) =>{
         console.log(err);
       });
   }
+}
+
+controller.department = (req, res) =>{
+  const dept = req.params.id;
+  Stores
+    .department(dept)
+    .then(results=>{
+      const body = JSON.parse(results.getBody());
+
+      const data = body["Weekly_Sales"].map((sales, i)=>{
+        return {
+          x: i+1,
+          y: sales
+        }
+      })
+      res.json(data);
+    })
 }
 
 module.exports = controller;

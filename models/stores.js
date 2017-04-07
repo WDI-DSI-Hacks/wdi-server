@@ -2,11 +2,11 @@ const Stores = {};
 const db = require('../db');
 const requestify = require('requestify');
 
-const dsiURL = process.env.DSI_URL || 'http://localhost:4000/predict';
+const dsiURL = process.env.DSI_URL || 'http://localhost:4000/';
 
 
 Stores.find = (store, department)=>{
-  return requestify.get(dsiURL,{
+  return requestify.get(dsiURL + 'predict',{
     params: {
       Store: store,
       Dept: department,
@@ -35,6 +35,14 @@ Stores.test = ()=>{
 
 Stores.dummy = (store, department, year) =>{
   return db.manyOrNone('SELECT EXTRACT(WEEK FROM week) AS week, weekly_sales AS profit FROM profits WHERE EXTRACT(YEAR FROM week) = $1 AND dept=$2 AND store=$3', [year, department, store])
+}
+
+Stores.department = (dep) =>{
+  return requestify.get(dsiURL + 'dept',{
+    params: {
+      Dept: dep,
+    }
+  });
 }
 
 
