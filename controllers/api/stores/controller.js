@@ -23,14 +23,39 @@ controller.index = (req,res)=>{
 }
 
 controller.show = (req, res) =>{
-  Stores
-    .dummy(req.params.store, req.params.department, req.params.year)
-    .then(results=>{
-      res.json(results);
+  const store = req.params.store;
+  const department = req.params.department;
+  const year = req.params.year;
+
+  if (parseInt(req.params.year) > 2012){
+    Stores
+    .find(store, department)
+    .then(results =>{
+      const body = JSON.parse(results.getBody());
+      console.log(body);
+
+      const data = body["Weekly_Sales"].map((sales, i)=>{
+        return {
+          week: i+1,
+          profit: sales
+        }
+      })
+      res.json(data);
     })
     .catch(err=>{
-      console.log(err);
-    })
+      console.log(err)
+    });
+
+  } else {
+    Stores
+      .dummy(store, department, year)
+      .then(results=>{
+        res.json(results);
+      })
+      .catch(err=>{
+        console.log(err);
+      });
+  }
 }
 
 module.exports = controller;
